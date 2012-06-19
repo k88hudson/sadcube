@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CUBE</title>
+  <meta name="viewport" content="width=device-width">
+
+  <style>
+    /*- - - Cube - - -*/
+  @-moz-keyframes z-spin{
+      0%{ -moz-transform: rotateX(-10deg) rotateY(0deg); }
+      100%{ -moz-transform: rotateX(-10deg) rotateY(-360deg); }
+  }
+  @-webkit-keyframes z-spin{
+      0%{ -webkit-transform: rotateX(-10deg) rotateY(0deg); }
+      100%{ -webkit-transform: rotateX(-10deg) rotateY(-360deg); }
+  }
+  @-o-keyframes z-spin{
+      0%{ -o-transform: rotateX(-10deg) rotateY(0deg); }
+      100%{ -o-transform: rotateX(-10deg) rotateY(-360deg); }
+  }
+  @-ms-keyframes z-spin{
+      0%{ -ms-transform: rotateX(-10deg) rotateY(0deg); }
+      100%{ -ms-transform: rotateX(-10deg) rotateY(-360deg); }
+  }
+  @keyframes z-spin{
+      0%{ transform: rotateX(-10deg) rotateY(0deg); }
+      100%{ transform: rotateX(-10deg) rotateY(-360deg); }
+  }
+
+.cube-container {
+  -webkit-transform: scale(0.6,0.6);
+  -webkit-perspective: 200; 
+  -webkit-perspective-origin: 50% 50px;
+  -moz-perspective: 200px; 
+  -moz-transform: scale(0.8,0.8);
+  -moz-perspective-origin: 50% 50px;
+  -o-transform: scale(0.8,0.8);
+  -o-perspective: 200; 
+  -o-perspective-origin: 50% 50px;
+  -ms-transform: scale(0.8,0.8);
+  -ms-perspective: 200; 
+  -ms-perspective-origin: 50% 50px;
+  transform: scale(0.8,0.8);
+  perspective: 200; 
+  perspective-origin: 50% 50px;
+}
+
+.cube {
+  position: relative;
+  margin: 0 auto;
+  width: 100px;
+  height: 100px;
+  -webkit-transition: -webkit-transform 50ms linear;
+  -webkit-transform: rotateX(-10deg) rotateY(20deg);
+  -webkit-transform-style: preserve-3d;
+  -webkit-animation-name: z-spin;
+  -webkit-animation-duration: 25s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+
+  -moz-transition: transform 50ms linear;
+  -moz-transform: rotateX(-10deg) rotateY(20deg);
+  -moz-transform-style: preserve-3d;
+  -moz-animation-name: z-spin;
+  -moz-animation-duration: 25s;
+  -moz-animation-iteration-count: infinite;
+  -moz-animation-timing-function: linear;
+
+  -o-transition: transform 50ms linear;
+  -o-transform: rotateX(-10deg) rotateY(20deg);
+  -o-transform-style: preserve-3d;
+  -o-animation-name: z-spin;
+  -o-animation-duration: 25s;
+  -o-animation-iteration-count: infinite;
+  -o-animation-timing-function: linear;
+
+  -ms-transition: -ms-transform 50ms linear;
+  -ms-transform: rotateX(-10deg) rotateY(20deg);
+  -ms-transform-style: preserve-3d;
+  -ms-animation-name: z-spin;
+  -ms-animation-duration: 25s;
+  -ms-animation-iteration-count: infinite;
+  -ms-animation-timing-function: linear;
+
+  transition: transform 50ms linear;
+  transform: rotateX(-10deg) rotateY(20deg);
+  transform-style: preserve-3d;
+  animation-name: z-spin;
+  animation-duration: 25s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.cube h2 {
+  margin-top: 0;
+  padding-top: 0;
+  color: #fff;
+}
+
+.cube a {
+  color: #fff;
+}
+
+.cube > div {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(0,0,0,.3);
+}   
+
+.cube > div > div {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.cube > div:nth-child(1) {
+  -webkit-transform: translateZ(50px);
+  -moz-transform: translateZ(50px);
+  -o-transform: translateZ(50px);
+  -ms-transform: translateZ(50px);
+  transform: translateZ(50px);
+}
+
+.cube > div:nth-child(2) {
+  -webkit-transform: rotateY(90deg) translateZ(50px);
+  -moz-transform: rotateY(90deg) translateZ(50px);
+  -o-transform: rotateY(90deg) translateZ(50px);
+  -ms-transform: rotateY(90deg) translateZ(50px);
+  transform: rotateY(90deg) translateZ(50px);
+}
+
+.cube > div:nth-child(3) {
+  -webkit-transform: rotateY(180deg) translateZ(50px);
+  -moz-transform: rotateY(180deg) translateZ(50px);
+  -o-transform: rotateY(180deg) translateZ(50px);
+  -ms-transform: rotateY(180deg) translateZ(50px);
+  transform: rotateY(180deg) translateZ(50px);
+}
+
+.cube > div:nth-child(4) {
+  -webkit-transform: rotateY(-90deg) translateZ(50px);
+  -moz-transform: rotateY(-90deg) translateZ(50px);
+  -o-transform: rotateY(-90deg) translateZ(50px);
+  -ms-transform: rotateY(-90deg) translateZ(50px);
+  transform: rotateY(-90deg) translateZ(50px);
+}
+.cube > div.cube-top {
+  display: block;
+  -webkit-transform: rotateX(90deg) translateZ(50px);
+  -moz-transform: rotateX(90deg) translateZ(50px);
+  -o-transform: rotateX(90deg) translateZ(50px);
+  -ms-transform: rotateX(90deg) translateZ(50px);
+  transform: rotateX(90deg) translateZ(50px);
+}
+.cube > div.cube-bottom {
+  display: block;
+  -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(50px);
+  -moz-transform: rotateX(-90deg) rotate(180deg) translateZ(50px);
+  -o-transform: rotateX(-90deg) rotate(180deg) translateZ(50px);
+  -ms-transform: rotateX(-90deg) rotate(180deg) translateZ(50px);
+  transform: rotateX(-90deg) rotate(180deg) translateZ(50px);
+}
+
+.cube > div.cube-shadow {
+  display: block;
+  background: #222;
+  background: rgba(0,0,0,.8);
+  box-shadow: 0 0 20px 10px rgba(0,0,0,.8);
+  -webkit-transform: rotateX(-90deg) rotate(180deg) translateZ(70px);
+  -moz-transform: rotateX(-90deg) rotate(180deg) translateZ(70px);
+  -o-transform: rotateX(-90deg) rotate(180deg) translateZ(70px);
+  -ms-transform: rotateX(-90deg) rotate(180deg) translateZ(70px);
+  transform: rotateX(-90deg) rotate(180deg) translateZ(70px);
+}
+
+.cube div h2{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  line-height: 1.2;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: 800;
+  color: #FF374C;
+  font-size: 3em;
+  letter-spacing: -0.08em;
+  text-shadow: none;
+}
+</style>
+
+</head>
+<body>
+   <article class="cube-container"> 
+      <section class="cube">
+        <div>
+          <div class="cube-side">
+            <h2>: (</h2>
+          </div>
+        </div>
+        <div class="cube-side">
+          <div>
+            <h2>: (</h2>
+          </div>
+        </div>
+        <div class="cube-side">
+          <div>
+            <h2>: (</h2>
+          </div>
+        </div>
+        <div class="cube-side">
+          <div>
+            <h2>: (</h2>
+          </div>
+        </div>
+        <div class="cube-top"></div>
+        <div class="cube-bottom"></div>
+        <div class="cube-shadow"></div>
+      </section> 
+    </article>
+</body>
+</html>
